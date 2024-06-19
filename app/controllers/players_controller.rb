@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @players = Player.all.page(params[:page]) #limit(8).order(:created_at)
   end
