@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_19_083258) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_19_134321) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
@@ -68,8 +71,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_083258) do
   create_table "matches", force: :cascade do |t|
     t.date "date"
     t.string "location"
-    t.integer "team1_id", null: false
-    t.integer "team2_id", null: false
+    t.bigint "team1_id", null: false
+    t.bigint "team2_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "series"
@@ -88,11 +91,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_083258) do
     t.integer "age"
     t.string "city"
     t.string "country"
-    t.integer "team_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
     t.string "image_url"
+    t.bigint "team_id", null: false
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
