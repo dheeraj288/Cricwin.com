@@ -1,0 +1,91 @@
+<div class="header">
+  <%= render "home/sidebar"%>
+</div>
+<div class="col-lg-10" style="padding-left: 18rem;">
+	<div  class="heading d-flex justify-content-center align-item-center">
+		<h1 class="player">New Players</h1>
+	</div>
+
+	<%= form_with model: @player do |form| %>
+	<div>
+		<div class="form-group">
+    <%= form.text_field :first_name, class: "form-control form-control-lg mt-2", placeholder: "First Name" %>
+ 		</div>
+
+		<div class="form-group">
+			<%= form.text_field :last_name, class: "form-control form-control-lg mt-2", placeholder: "Last Name" %>
+		</div>
+
+		<div class="form-group">
+			<%= form.email_field :email, class: "form-control form-control-lg mt-2", placeholder: "Email" %>
+		</div>
+
+		<div class="form-group">
+			<%= form.number_field :age, class: "form-control form-control-lg mt-2", placeholder: "Age" %>
+		</div>
+
+		<div class="form-group">
+			<%= form.text_field :city, class: "form-control form-control-lg mt-2", placeholder: "City" %>
+		</div>
+
+		<div class="form-group">
+			<%= form.text_field :country, class: "form-control form-control-lg mt-2", placeholder: "Country" %>
+		</div>
+
+		<div class="form-group">
+			<%= form.text_field :description, class: "form-control form-control-lg mt-2", placeholder: "Description" %>
+		</div>
+
+		<div>
+			<%= form.submit class: "btn btn-outline-success btn-lg mt-3"  %>
+		</div>
+		
+	</div>
+
+	<% end %>
+
+		
+<style>
+
+	body{
+	    background: -webkit-linear-gradient(left, #fff5d7, #1d304e);
+	}
+
+	.header {
+		position: fixed; 
+		width: 100%; top: 0;
+	    left: 0;
+	    width: 100%;
+	    z-index: 1000;
+	}
+
+	.heading h1{
+	    font-weight:850;
+	    color:#071a35;
+	    font-size:4em;   
+	     border-radius: 0.5rem;
+	}
+
+	.player {
+		padding-top: 5rem;
+	}
+
+	.card-body {
+		background-color: #c9c4c3;
+	}
+
+	.form-group {
+		padding-top: 25px;
+		width: 600px;
+		justify-content: center;
+		margin-left: 22rem;
+	}
+
+	.btn {
+		justify-content: center;
+		margin-left: 22rem;
+		width: 200px;
+		height: 50px;
+	}
+
+</style>

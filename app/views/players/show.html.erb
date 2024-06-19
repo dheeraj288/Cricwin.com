@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Team Information</title>
+</head>
+<body>
+  <%= render "home/sidebar"%>
+  <section>
+    <div class="box">
+      <h3> Player Information</h3>
+      <div class="list">
+        <div class="imgBx">
+          <%= image_tag @player.image_url, class: "team-img mr-3" %>
+        </div>
+        <div class="content">
+          <h2>Player Name: <%= @player.first_name %> <%= @player.last_name %></h2>
+          <p>Email: <%= @player.email %></p>
+          <p>Age: <%= @player.age %></p>
+          <p>City: <%= @player.city %></p>
+          <p>Country: <%= @player.country %></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: relative;
+  background-color: #161623;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#ffc187,#e91e63);
+  border-radius: 50%;
+  transform: translate(-250px, -120px);
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(#2196f3,#31ff38);
+  border-radius: 50%;
+  transform: translate(250px, 120px);
+}
+
+.box {
+  position: relative;
+  min-height: 400px;
+  min-width: 350px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  z-index: 10;
+  padding: 20px;
+  backdrop-filter: blur(25px);
+}
+
+.box h3 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box .list {
+  position: relative;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px 0;
+  transition: 0.5s;
+}
+
+.box .list:hover {
+  background-color: #fff;
+  box-shadow: -15px 30px 50px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+  z-index: 1000;
+}
+
+.box .list .imgBx{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+
+.box .list .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box .list .content {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.box .list .content h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #03a9f4;
+}
+
+.box .list .content p {
+  margin-bottom: 10px;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.box .list .content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.box .list:hover .content p {
+  color: #333;
+}
+
+</style>

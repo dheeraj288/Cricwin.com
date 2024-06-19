@@ -1,0 +1,87 @@
+<style>
+  .white-text {
+    color: white;
+  }
+
+  .navbar {
+    background-color: #071a35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .navbar a {
+    color: white;
+    font-size: 21px;
+    text-decoration: none;
+  }
+
+
+  .navbar-brand.title_name {
+    font-size: 38px;
+  }
+
+  .nav_link_login {
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 768px) {
+    .navbar a, .navbar-nav .nav-link {
+      font-size: 14px;
+    }
+
+    .navbar-nav {
+      justify-content: center;
+    }
+
+    .navbar-brand.title_name {
+      font-size: 17px;
+      margin-left: 1px;
+    }
+  }
+
+  @media (max-width: 412px) {
+    .navbar a, .navbar-nav .nav-link {
+      font-size: 8px;
+    }
+
+    .navbar-brand.title_name {
+      font-size: 13px;
+    }
+  }
+</style>
+
+
+
+<nav class="navbar" style="background-color: #071a35; ">
+    <a class="navbar-brand justify-content-center title_name" href="http://localhost:3000/" style="">
+      <span style="color: white; font-weight: bold; font-style: italic;">CrickWin</span> <span style="font-weight: bold; font-style: normal; color: #ff0066;">.Com</span>
+    </a>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <%= link_to "About", "/about" ,class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact Us", "/contact_us" ,class:"nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Profile", "/profile" ,class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav_link_login" href="/users/sign_in" id="login-link" style="text-transform: capitalize;">
+          <i class="fas fa-user"></i>
+            <% if current_user.present? %>
+              <%=current_user.try(:first_name)%>
+            <%else%>
+              Login
+            <%end%>
+        </a>
+      </li>
+    </ul>
+</nav>
+
+
+
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket News</title>
+    <style>
+        body {
+            background: -webkit-linear-gradient(left, #fff5d7, #1d304e);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding-top: 80px;
+        }
+        .left, .right {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .left {
+            width: 70%;
+            padding: 10px;
+        }
+        .left h1 {
+            font-weight: 850;
+            color: #071a35;
+            font-size: 3em;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .right {
+            width: 30%;
+            padding: 12px;
+        }
+        .right h3 {
+            font-weight: 850;
+            color: #071a35;
+            font-size: 2em;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .box, .cont2, .box3 {
+            width: 100%;
+        }
+        #box1, #box2 {
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            overflow: hidden;
+        }
+        #box1 #image, #box2 .image2 {
+            width: 30%;
+            overflow: hidden;
+        }
+        #box1:hover #image img, #box2:hover .image2 img {
+            transform: scale(1.3);
+        }
+        #box1:hover #text p:nth-child(1), #box2:hover .text2 p:nth-child(1) {
+            color: white;
+        }
+
+        .box3{
+            width:76%;
+            height:600px;
+            /*border:1px solid white;*/
+            margin-left: 15px;
+            margin-top: 15px;
+            
+        }
+        #image img, .image2 img {
+            width: 100%;
+            height: auto;
+            transition: transform 1s;
+        }
+        #text, .text2 {
+            width: 70%;
+            padding-left: 5px;
+            font-size: 18px;
+        }
+        #text p, .text2 p {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .left, .right {
+                width: 100%;
+            }
+            #box1, #box2 {
+                flex-direction: column;
+            }
+            #image, .image2 {
+                width: 100%;
+            }
+            #text, .text2 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="position: fixed; width: 100%;">
+        <%= render "home/sidebar" %>
+    </div>
+    <div id="container">
+        <div class="left">
+            <h1 class="heading d-flex justify-content-center align-item-center">Latest News</h1>
+            <div class="box">
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/595x396/i1/c495209/the-first-two-games-at-nassau.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Damage control: ICC top-dresses NY pitches and suppresses extra grass veins </b></p>
+                        <p>The ICC is taking steps to address the widespread criticism and outrage regarding the drop-in pitches in New York for the ongoing T20 World Cup</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/595x396/i1/c495210/the-bcci-has-decided-to-do-awa.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Indian domestic calendar kickstarts in September.</b></p>
+                        <p> Challenger Trophy returns for Women</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/595x396/i1/c495169/nortje-picked-up-4-for-7-in-so.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Clever cricket' will tame Nassau pitch, says Klaasen</b></p>
+                        <p>So far Anrich Nortje's has been the lone voice of approval for the Nassau County pitch.</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://cdn.wisden.com/wp-content/uploads/2023/12/as-980x530.png" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Control with the ball a work in progress for Arshdeep Singh.</b></p>
+                        <p>Ahead of the 16th over of Ireland's innings, Arshdeep Singh was recalled to bowl his final over. He had impressive figures of 2 for 18 prior to that and, after bowling well initially, he was expected to close out the Ireland innings</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/395x196/i1/c212543/faf-is-amongst-the-12-retentio.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Klaasen, Du Plessis amongst the retentions for St Lucia Kings.</b></p>
+                        <p>South Africa's Heinrich Klaasen will be joining Saint Lucia Kings for CPL 2024, the franchise confirmed along with their list of retentions on Thursday (June 6)</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/380x254/i1/c494689/harry-tector-received-a-near-u.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Pitch not perfect: India cop bruises in straightforward win</b></p>
+                        <p>India emerged from their opening match against Ireland unscathed, and that must go down as some achievement.</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/395x196/i1/c494570/namibia-struggled-in-their-ope.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Namibia, Scotland eye crucial win with plenty at stake</b></p>
+                        <p>A tie and a wash-out so far in Group B doesn't seem like it ought to have changed the state of play all that much, but suddenly it feels as though there will be a fair sight more than just pride on the line.</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/480x254/i1/c491992/pants-knock-may-have-conclusi.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>Pant's performance a strong takeaway from India's lone warm-up game</b></p>
+                        <p> During the Indian team's recent net sessions at Cantiague Park, Long Island, Rishab Pant took a proactive approach by engaging with local spinners, inquiring about their PowerPlay field.</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+                <div id="box1">
+                    <div id="image"><img src="https://www.cricbuzz.com/a/img/v1/495x296/i1/c494964/stoinis-and-warner-hit-contras.jpg" alt="News Image"></div>
+                    <div id="text">
+                        <p><b>All-round Stoinis powers Australia to winning start</b></p>
+                        <p>Australia started their Nassau campaign on a winning note with a 68-run victory over UAE at Cantiague Park, Long Island.</p>
+                        <p>07-june-2024 .CrickWin Info staff</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h3 class="heading d-flex justify-content-center align-item-center">Most Read</h3>
+            <div class="cont2">
+                <div id="box2">
+                    <div class="image2"><img src="https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci/db/PICTURES/CMS/318500/318549.5.jpg" alt="Most Read Image"></div>
+                    <div class="text2">
+                        <p>Opportunity for India, South Africa to build ODI plans</p>
+                        <p>22h ago</p>
+                    </div>
+                </div>
+                <div id="box2">
+                    <div class="image2"><img src="https://www.cricbuzz.com/a/img/v1/980x654/i1/c242021/challenges-for-harmanpreet-during-the-sri-lanka-tour.jpg" alt="Most Read Image"></div>
+                    <div class="text2">
+                        <p>Challenges for Harmanpreet during the Sri Lanka tour</p>
+                        <p>2d ago</p>
+                    </div>
+                </div>
+                <div id="box2">
+                    <div class="image2"><img src="https://www.cricbuzz.com/a/img/v1/980x654/i1/c244951/ashwin-and-sundar-have-been-key-for-india-in-the-test-series.jpg" alt="Most Read Image"></div>
+                    <div class="text2">
+                        <p>Ashwin and Sundar have been key for India in the Test series</p>
+                        <p>3d ago</p>
+                    </div>
+                </div>
+                <div id="box2">
+                    <div class="image2"><img src="https://www.cricbuzz.com/a/img/v1/980x654/i1/c244955/shardul-thakur-has-been-a-revelation-for-india.jpg" alt="Most Read Image"></div>
+                    <div class="text2">
+                        <p>Shardul Thakur has been a revelation for India</p>
+                        <p>4d ago</p>
+                    </div>
+                </div>
+                <div id="box2">
+                    <div class="image2"><img src="https://www.cricbuzz.com/a/img/v1/980x654/i1/c244958/rishabh-pant-has-shown-great-promise-in-the-recent-series.jpg" alt="Most Read Image"></div>
+                    <div class="text2">
+                        <p>Rishabh Pant has shown great promise in the recent series</p>
+                        <p>5d ago</p>
+                    </div>
+                </div>
+                    <%# <div class="box3">
+                        <img src="https://tpc.googlesyndication.com/simgad/13683194396473605559?">
+                    </div> %>
+                </div>

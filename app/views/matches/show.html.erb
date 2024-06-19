@@ -1,0 +1,135 @@
+<div class="header">
+  <%= render "home/sidebar" %>
+</div>
+<div class="container mt-5 pt-5">
+  <div class="heading text-center mb-4">
+    <h1 class="player">Match Details</h1>
+  </div>
+  <div class="match-info bg-white rounded p-4 shadow">
+    <div class="row mb-3">
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Date:</span>
+        <span class="attribute-value"><%= @match.date %></span>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Location:</span>
+        <span class="attribute-value"><%= @match.location %></span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6 col-sm-12 d-flex align-items-center">
+        <%= image_tag @match.team1.image_url, class: "team-img mr-3" %>
+        <div>
+          <span class="attribute-label"></span>
+          <span class="attribute-value"><%= @match.team1.name %></span>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 d-flex align-items-center">
+        <%= image_tag @match.team2.image_url, class: "team-img mr-3" %>
+        <div>
+          <span class="attribute-label"></span>
+          <span class="attribute-value"><%= @match.team2.name %></span>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Series:</span>
+        <span class="attribute-value"><%= @match.series %></span>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Umpire:</span>
+        <span class="attribute-value"><%= @match.umpire %></span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Ground Capacity:</span>
+        <span class="attribute-value"><%= @match.ground_capacity %></span>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Hosts To:</span>
+        <span class="attribute-value"><%= @match.hosts_to %></span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6 col-sm-12">
+        <span class="attribute-label">Streaming:</span>
+        <span class="attribute-value"><%= @match.streaming %></span>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  body {
+  background: linear-gradient(to left, #f3f4f6, #1d304e);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  margin-top: 6rem;
+  padding-top: 2rem;
+}
+
+.heading h1 {
+  font-weight: 700;
+  color: #071a35;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.match-info {
+  border: 2px solid #071a35;
+  background-color: #fff;
+}
+
+.attribute-label {
+  font-weight: bold;
+  color: #071a35;
+  display: block;
+}
+
+.attribute-value {
+  color: #333;
+  display: block;
+}
+
+.team-img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .heading h1 {
+    font-size: 2rem;
+  }
+  .attribute-label, .attribute-value {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  .team-img {
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 0.5rem;
+  }
+  .match-info .row {
+    margin-bottom: 1rem;
+  }
+  .match-info .col-md-6 {
+    margin-bottom: 1rem;
+  }
+}
+
+</style>

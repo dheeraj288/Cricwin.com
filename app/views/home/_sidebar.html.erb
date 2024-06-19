@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    <style>
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .navba {
+            height: 100%;
+            background-color: #071a35;
+        }
+        .emblem{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sidebar {
+            height: 100%;
+            width: 90px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #071a35;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 13px;
+            white-space: nowrap;
+            border-radius: 10px;
+        }
+        .sidebar a {
+            padding: 12px 8px 8px 33px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #f1f1f1;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #818181;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .material-icons,
+        .icon-text {
+            vertical-align: middle;
+            font size :18px;
+        }
+        .material-icons {
+            padding-bottom: 3px;
+            color: white;
+            font-size:25px;
+        }
+        .material-symbols-outlined,
+        .icon-text {
+            vertical-align: middle;
+            font size :23px;
+        }
+        .material-symbols-outlined {
+            padding-bottom: 3px;
+            color: white;
+            font-size:25px;
+        }
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 100px;
+        }
+        #toggleButton {
+            display: none;
+        }
+
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 21px;
+            }
+        }
+        .sidebar{
+          width: 75px;
+        }
+        .sidebar:hover .account_create {
+            margin-left: 2px !important; 
+            margin-top: 30px;
+        }
+        .fixed-size-image {
+            width:65px; /* Set the desired width */
+            height: 65px; /* Set the desired height */
+        }
+        .sign_out_btn {
+            float: right !important; /* Move the element to the right */
+            margin-right: 5px important; /* Add a margin of 5px to the right */
+          }
+        
+          .sign_out_btn a {
+            text-decoration: none; /* Remove underline from the link */
+            color: #ffffff; /* Set the text color to white */
+            font-family: Arial, sans-serif; /* Set the desired font family */
+            font-size: 16px; /* Set the font size to 16px */
+          }
+          .plr-1rem{
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+          }
+
+        @media screen and (max-width: 768px) {
+            #toggleButton {
+                display: block;
+            }
+            .sidebar {
+                margin-top:50px;
+                width: 0;
+                border-radius: 1px;
+            }
+            #main {
+                margin-left: 0;
+            }
+            .navba {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            .account_create {
+                margin-top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav  class="navba d-flex align-items-center justify-content-between plr-1rem">
+    <span class="emblem">
+    <button id="toggleButton" onclick="toggleSidebar()">&#9776;</button>
+     </span>
+      <span class="emblem">
+        <a class="navba-brand" style="font-size: 35px; text-decoration:none;">
+            <span style="color: white; font-weight: bold; font-style: italic; ">CrickWin </span> 
+            <span style="font-weight: bold; font-style: italic; color: #ff0066;">.Com</span>
+        </a>
+      </span>  
+      <span class="sign_out_btn">
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "sign_out_btn" do %>
+          <span class="material-symbols-outlined">logout</span> Logout
+        <% end %>
+      </span>
+    </nav>
+
+    <div id="mySidebar" class="sidebar" >
+        <%= image_tag "cricket.png", alt: "", class: "fixed-size-image d-none d-md-block" %>
+        <div class="account_create" href="#" style="margin-bottom: 22px; margin-left:10px; border-bottom: 2px solid white">
+            <i class="material-icons" style="font-size: 63px;">account_circle</i>
+        </div>
+        <div class= "mt-4" >
+ 
+            <a href="<%= root_path %>"><span><span class="material-symbols-outlined">home</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Home</span></a>
+            
+            <a href="<%= players_path %>"><span><span class="material-symbols-outlined">person</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Player</span></a>
+            
+            <a href="<%= teams_path %>"><span><span class="material-symbols-outlined">groups</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Teams</span></a>
+            
+            <a href="<%= matches_path %>"><span><span class="material-symbols-outlined">sports_cricket</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Matches</span></a>
+            
+            <a href="<%= about_path %>"><span><span class="material-symbols-outlined">info</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;about us</span></a>
+            
+            <a href="<%= contact_uss_path %>"><span><span class="material-symbols-outlined">contact_support</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Contact Us</span></a>
+            
+            <a href="<%= root_path %>"><span><span class="material-symbols-outlined">conditions</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;</span>Terms & Condition</a>
+
+            <a href="<%= news_path %>"><span><span class="material-symbols-outlined">news</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;</span>News</a>            
+
+        </div>
+    </div>
+
+    <div id="main">
+        <h2></h2>
+    </div>
+
+    <script>
+    function toggleSidebar() {
+        if (window.innerWidth <= 768) {
+            var sidebar = document.getElementById('mySidebar');
+            var mainContent = document.getElementById('main');
+            var currentWidth = parseInt(sidebar.style.width, 10);
+
+            if (currentWidth === 0) {
+                sidebar.style.width = "285px";
+                mainContent.style.marginLeft = "285px";
+            } else {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            }
+        }
+    }
+
+    if (window.innerWidth > 768) {
+        var sidebar = document.getElementById('mySidebar');
+
+        sidebar.addEventListener('mouseover', function () {
+            console.log("opening sidebar");
+            document.getElementById("mySidebar").style.width = "285px";
+            document.getElementById("main").style.marginLeft = "285px";
+            this.mini = false;
+        });
+
+        sidebar.addEventListener('mouseout', function () {
+            console.log("closing sidebar");
+            document.getElementById("mySidebar").style.width = "78px";
+            document.getElementById("main").style.marginLeft = "78px";
+            this.mini = true;
+        });
+    }
+</script>
+</body>
+
+</html>

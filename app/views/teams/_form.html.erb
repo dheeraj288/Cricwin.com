@@ -1,0 +1,57 @@
+<%= form_with(model: team) do |form| %>
+  <% if team.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+        <% team.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :coach, style: "display: block" %>
+    <%= form.text_field :coach %>
+  </div>
+
+  <div>
+    <%= form.label :batsman, style: "display: block" %>
+    <%= form.text_field :batsman %>
+  </div>
+
+  <div>
+    <%= form.label :wicket_keeper, style: "display: block" %>
+    <%= form.text_field :wicket_keeper %>
+  </div>
+
+  <div>
+    <%= form.label :all_rounder, style: "display: block" %>
+    <%= form.text_field :all_rounder %>
+  </div>
+
+  <div>
+    <%= form.label :bowlers, style: "display: block" %>
+    <%= form.text_field :bowlers %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :player_id, style: "display: block" %>
+    <%= form.text_field :player_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
