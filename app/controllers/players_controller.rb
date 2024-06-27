@@ -1,7 +1,8 @@
 class PlayersController < ApplicationController
   before_action :authenticate_user!
+
   def index
-    @players = Player.all.page(params[:page]) #limit(8).order(:created_at)
+    @players = Player.all.page(params[:page]) # limit(8).order(:created_at)
   end
 
   def show
@@ -12,12 +13,11 @@ class PlayersController < ApplicationController
     @player = Player.new
   end
 
-  
   def create
     @player = Player.new(player_params)
     if @player.save
-      redirect_to @player, message: "Players has been created successfully"
-    else 
+      redirect_to @player, message: 'Players has been created successfully'
+    else
       render :new
     end
   end
@@ -44,15 +44,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(
-     :first_name,
-     :last_name,
-     :email,
-     :age,
-     :city,
-     :country,
-     :description,
-     :image_url,
-     )
+    params.require(:player).permit(:first_name, :last_name, :email, :age, :city, :country, :description, :image_url)
   end
 end
