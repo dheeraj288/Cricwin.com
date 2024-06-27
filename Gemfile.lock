@@ -150,6 +150,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
     hashie (5.0.0)
+    htmlbeautifier (1.4.3)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -393,6 +394,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  htmlbeautifier
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
