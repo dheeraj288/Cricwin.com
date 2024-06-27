@@ -74,7 +74,6 @@ gem "faker"
 gem 'kaminari'
 gem 'activeadmin'
 gem 'ransack'
-
 # third party login for google
 
 gem "omniauth"
